@@ -1,0 +1,15 @@
+[package]
+name = "pixelate"
+version = "0.1.0"
+authors = ["Maciej Hirsz <maciej.hirsz@gmail.com>"]
+license = "GPL-3.0"
+edition = "2018"
+description = "Fast, pixelated, palette-based PNG renderer"
+repository = "https://github.com/maciejhirsz/pixelate"
+documentation = "https://docs.rs/pixelate"
+readme = "./README.md"
+keywords = ["png", "plte", "pixelart", "image"]
+categories = ["multimedia::images", "multimedia::encoding"]
+
+[dependencies]
+png = "0.14"
