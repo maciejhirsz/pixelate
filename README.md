@@ -19,5 +19,5 @@ Not only does this produce smaller images after compression, smaller bitmap is a
 
 ### License
 
-Ramhorns is free software, and is released under the terms of the GNU General Public
+Pixelate is free software, and is released under the terms of the GNU General Public
 License version 3. See [LICENSE](LICENSE).
