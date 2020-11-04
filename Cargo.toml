@@ -12,4 +12,4 @@ keywords = ["png", "plte", "pixelart", "image"]
 categories = ["multimedia::images", "multimedia::encoding"]
 
 [dependencies]
-png = "0.14"
+png = "0.16"
