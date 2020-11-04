@@ -27,7 +27,7 @@
 
 use std::io;
 use std::iter::repeat;
-use png::{BitDepth, ColorType, HasParameters};
+use png::{BitDepth, ColorType};
 
 /// Generic error type
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -127,7 +127,8 @@ impl<'a> Image<'a> {
 
         let mut encoder = png::Encoder::new(writer, img_width as u32, img_height as u32);
 
-        encoder.set(ColorType::Indexed).set(bit_depth);
+        encoder.set_color(ColorType::Indexed);
+        encoder.set_depth(bit_depth);
 
         let mut writer = encoder.write_header()?;
 
@@ -151,9 +152,9 @@ impl<'a> Image<'a> {
 
     fn bit_depth(&self) -> BitDepth {
         match self.palette.len() as u8 {
-            0...2  => BitDepth::One,
-            3...4  => BitDepth::Two,
-            5...16 => BitDepth::Four,
+            0..=2  => BitDepth::One,
+            3..=4  => BitDepth::Two,
+            5..=16 => BitDepth::Four,
             _      => BitDepth::Eight,
         }
     }
